@@ -1,6 +1,19 @@
 @import '../../../../assets/styles/base/variable.scss';
 
-
+// @keyframes slideIn{
+//     from{
+//         transform: translateX(-100%);
+//     }to{
+//         transform: translateX(0);
+//     }
+// }
+// @keyframes slideOut{
+//     from{
+//         transform: translateX(0);
+//     }to{
+//         transform: translateX(-100%);
+//     }
+// }
 .mainHeader{
     background-color: $primary-color;
     height: $height-header;
@@ -43,7 +56,9 @@
     border: none;
     background-color: #fee2e2;
     border-radius: 50%;
+    cursor: pointer;
 }
+.btnCateMobile,
 .btnCate{
     margin-left: 10px;
     background-color: #7e161c;
@@ -63,6 +78,9 @@
         width: 100%;
         background-color: transparent;
     }
+}
+.btnCateMobile{
+    display: none;
 }
 .cartAndInfo{
     display: flex;
@@ -120,14 +138,18 @@
     bottom: 0;
     background-color: rgba(0,0,0,0.3);
     transform: translateX(-100%);
-    // transition: ea;
+    transition: transform ease-in 0.3s;
+    
+}
+.navMobileInput:checked ~ .navCateMobileOverPlay{
+    transform: translateX(0%);
 }
 .navCateMobile{
-    // width: 100;
     max-width: 100%;
     background-color: #f3f4f6;
     height: 100%;
 }
+
 .navCateHeaderMobile{
     height: 58px;
     background-color: $primary-color;
@@ -172,6 +194,7 @@
 
 .navCateHeaderMobileTop{
     display: flex;
+    justify-content: space-between;
 }
 .navItemCateMobileWrap{
     margin-top: 4px;
@@ -217,13 +240,15 @@
     }
 
 }
-
 // Table and moblie Reponsive
 @media (max-width: 1023px){
-    .btnCateText{
+    .btnCate{
         display: none;
     }
     .cartAndInfo{
         margin-left: 0;
+    }
+    .btnCateMobile{
+        display: block;
     }
 }
