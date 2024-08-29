@@ -9,6 +9,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import { faCartShopping, faSearch, faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import BtnUserInfo from "./BtnUserInfo";
 
 
 
@@ -110,9 +111,11 @@ const Header = () => {
                     </div>
 
                     <div className={style.cartAndInfo}>
-                        <button className={style.btnInfo}>
+                        {/* Tại đây: sáng mai l */}
+                        {/* <button className={style.btnInfo}>
                             <FontAwesomeIcon icon={faUser} size="lg"/>
-                        </button>
+                        </button> */}
+                        <BtnUserInfo></BtnUserInfo>
 
                         <a href="" className={style.btnCart}>
                             <FontAwesomeIcon icon={faCartShopping}/>

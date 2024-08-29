@@ -87,14 +87,7 @@
     align-items: center;
     margin-left: 100px;
 }
-.btnInfo{
-    padding: 16px 18px;
-    display: block;
-    border: none;
-    background-color: #7e161c;
-    border-radius: 50%;
-    color: #fff;
-}
+
 .btnCart{
     margin-left: 20px;
     margin-right: 10px;
@@ -229,9 +222,7 @@
 
 // Moblie: width: < 740px
 @media(max-width: 739px){
-    .btnInfo{
-        display: none;
-    }
+    
     .logoHeader{
         display: none;
     }
