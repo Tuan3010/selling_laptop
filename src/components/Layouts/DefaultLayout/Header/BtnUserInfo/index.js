@@ -2,21 +2,36 @@ import s from "./styleBtnUserInfo.scss";
 import { faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-const BtnUserInfo = () => {
-    const [isActive,setIsActive] = useState(false);
+const BtnUserInfo = ({isActivePC, isActiveMB}) => {
+    
+    
+  
+    const [activeLogin,setActiveLogin] = useState(false);
+    const [hiddenModal,setHiddenModal] = useState(true);
     console.log('sd');
     
     const handleToggle = () =>{
-        setIsActive(!isActive);
+        setActiveLogin(!activeLogin);
     }
+    
+    const handleExit = () =>{
+      setHiddenModal(!hiddenModal); 
+    }
+    
   return (
-    <>
-      <button className={"btnUserInfo"}>
+    <div className="btnUserInfoContainer">
+      {/* Btn for PC and Tablet */}
+      <button className={isActivePC ? "btnUserInfo active" : "btnUserInfo"} onClick={handleExit}>
         <FontAwesomeIcon icon={faUser} size="lg" />
       </button>
-      <div className={"overPlay"}>
-        <div className={isActive ? 'container change' : 'container'}>
-
+      {/* Btn for Mobile */}
+      
+      <div className={isActiveMB ? "btnUserInfoMobile active": 'btnUserInfoMobile'}>
+        <button onClick={handleExit} className="btnSignUpMobile" >Đăng ký</button>
+        <button onClick={handleExit}  className={"btnSignInMobile"}>Đăng nhập</button>
+      </div>
+      <div className={hiddenModal ? "overPlay hidden" : "overPlay"}>
+        <div className={activeLogin ? 'container change' : 'container'}>
           <div className="forms-container">
             <div className="form-control signup-form">
               <form action="#">
@@ -53,6 +68,7 @@ const BtnUserInfo = () => {
               </div> */}
             </div>
           </div>
+          
           <div className="intros-container">
             <div className="intro-control signin-intro">
               <div className="intro-control__inner">
@@ -78,11 +94,11 @@ const BtnUserInfo = () => {
               </div>
             </div>
           </div>
-          <FontAwesomeIcon icon={faXmark}></FontAwesomeIcon>
+          <FontAwesomeIcon onClick={handleExit} icon={faXmark} size="lg" style={{cursor:'pointer',position: 'absolute', right:'0',padding: '10px', zIndex: '3'}}></FontAwesomeIcon>
           
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

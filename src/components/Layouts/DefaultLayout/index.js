@@ -5,7 +5,9 @@ const DefaultLayout = ({children}) => {
     return (
         <>
             <Header />
-                {children}
+                <div className="main-content" style={{paddingTop: '100px'}}>
+                    {children}
+                </div>
             <Footer />
         </>
     );

@@ -1,20 +1,49 @@
-@import '../../../../../assets/styles/base/variable.scss';
+
+
+
+.btnSignUpMobile{
+  
+  padding: 10px;    
+  color: var(--primary-color);
+  border: solid 1px var(--primary-color);
+  border-radius: 6px;
+  background-color: #fff;
+  margin-right: 10px;
+  cursor: pointer;
+  
+}
+
+.btnSignInMobile{
+  
+  padding: 10px 16px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 6px;
+  border: transparent;
+  cursor: pointer;
+}
+.btnUserInfoMobile{
+  display: none;
+}
 
 .btnUserInfo{
+
     padding: 16px 18px;
-    display: block;
+    display: none;
     border: none;
     background-color: #7e161c;
     border-radius: 50%;
     color: #fff;
+    cursor: pointer;
 }
+
 .overPlay{
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: rgba($color: #000000, $alpha: 0.3);
+    background-color: rgba( #000000, 0.3);
 }
 .container {
     background-color: #fff;
@@ -60,7 +89,7 @@
     border: none;
     padding: 20px;
     margin-top: 5px;
-    background-color: $primary-color;
+    background-color: var(--primary-color);
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
@@ -112,7 +141,7 @@
     flex-direction: column;
     height: 480px;
     color: #fff;
-    background: linear-gradient(170deg, #e9465f, $primary-color);
+    background: linear-gradient(170deg, #e9465f, var(--primary-color));
     transition: all 0.5s ease-in;
   }
   .container .intros-container .intro-control .intro-control__inner {
@@ -173,6 +202,21 @@
     z-index: 2;
   }
   
+  
+  // ------- Active class ----------
+.active{
+  display: block;
+}
+.hidden{
+  display: none;
+}
+
+// -------------
+  @media (max-width: 1023px){
+    .btnUserInfo{
+      display: none;
+    }
+  }
   @media screen and (max-width: 480px) {
     .container {
       height: 100vh;

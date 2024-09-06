@@ -1,0 +1,60 @@
+
+// ------- style for slider  -------------
+.slider{
+    padding-top: 20px;
+}
+
+.sliderAuto{
+    position: relative;
+    z-index: 0;
+
+}
+
+.btnLeft,
+.btnRight{
+    border: none;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    background-color: rgba($color: #000000, $alpha: .3);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btnLeft{
+    left: 4px;
+    
+}
+
+.btnRight{
+    right: 4px;
+}
+
+.listBullet{
+    position: absolute;
+    display: flex;
+    padding: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.itemBullet{
+    display: inline-block;
+    margin: 0 4px;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: rgba($color: #000000, $alpha: .3);
+}
+.bulletActive{
+    background-color: rgba($color: #000000, $alpha: .6);
+}
+.sliderRight{
+    justify-content: space-between;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}

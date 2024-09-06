@@ -4,16 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="src/assets/styles/base/grid.css">
     <style>
-        .container{
-            background-color: red;
-        }
+      *{
+        padding: 0;
+        margin: 0;
+        /* box-sizing: border-box; */
+      }
+      .box{
+        width: 100%;
+        height: 200px;
+        background-color: orange;
+      }
+      .container{
+        background-color: antiquewhite;
+        height: 200px;
+      }
+      .item{
+        height: 100px;
+        background-color: salmon;
+      }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href=""></a>
-        <img src="src/assets/images/logo.png" alt="" width="120px" >
-    </div>
+   
+      <div class="box">
+        <div class="grid wide container">
+          <div class="row">
+            <div class="col l-4 ">
+              <div class="item">Item1</div>
+            </div>
+            
+            <div class="col l-4 ">
+              <div class="item">Item1</div>
+            </div>
+            
+            <div class="col l-4 ">
+              <div class="item">Item1</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
 </body>
 </html>
